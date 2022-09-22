@@ -1,0 +1,43 @@
+{
+    "data": {
+        "image_folder": "./data/images/",
+        "annotation_folder": "./data/annotations/",
+        "transformations": [],
+        "test_suffix": null,
+        "train_batch_size": 2,
+        "val_batch_size": 2,
+        "test_batch_size": 2
+    },
+    "trainer": {
+        "default_root_dir": "./data/out/",
+        "auto_select_gpus": true,
+        "enable_progress_bar": true,
+        "check_val_every_n_epoch": 1,
+        "max_epochs": 5,
+        "log_every_n_steps": 50
+    },
+    "hparams": {
+        "num_classes": 2,
+        "lr": 0.001,
+        "momentum": 0.9,
+        "weight_decay": 0.0005,
+        "step_size": 3,
+        "gamma": 0.1
+    },
+    "logger": {
+        "save_dir": "./data/out/logs",
+        "name": "object_detection"
+    },
+    "profiler": {
+        "dirpath": "./data/out/profiler",
+        "filename": "profiler"
+    },
+    "callbacks": {
+        "model_checkpoint": {
+            "dirpath": "./data/out/checkpoints",
+            "filename": "object_detection-{epoch}-{val_loss:.2f}",
+            "save_top_k": 1,
+            "mode": "min"
+        }
+    }
+}

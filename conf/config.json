@@ -1,7 +1,0 @@
-{
-    "data": {
-        "base_dir": "./data/",
-        "image_folder": "images",
-        "annotation_folder": "annotations"
-    }
-}
